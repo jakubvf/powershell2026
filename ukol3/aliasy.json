@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "np",
+    "Definition": "notepad.exe",
+    "Description": "Poznámkový blok"
+  },
+  {
+    "Name": "ct",
+    "Definition": "control.exe",
+    "Description": "Ovládací panely"
+  }
+]
